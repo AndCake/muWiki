@@ -1,0 +1,342 @@
+body{
+    margin: 0 auto;
+    font-family: Georgia, Palatino, serif;
+    color: #444444;
+    line-height: 1;
+    max-width: 960px;
+    padding: 30px;
+}
+h1, h2, h3, h4 {
+    color: #111111;
+    font-weight: 400;
+}
+h1, h2, h3, h4, h5, p {
+    margin-bottom: 24px;
+    padding: 0;
+}
+h1 {
+    font-size: 48px;
+}
+h2 {
+    font-size: 30px;
+    /* The bottom margin is small. It's designed to be used with gray meta text
+     * below a post title. */
+    margin: 24px 0 6px;
+}
+h3 {
+    font-size: 24px;
+}
+h4 {
+    font-size: 21px;
+}
+h5 {
+    font-size: 18px;
+}
+a {
+    color: #0099ff;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+a:hover {
+    text-decoration: none;
+    color: #ff6600;
+}
+a:visited {
+    color: purple;
+}
+ul, ol {
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+}
+li {
+    line-height: 24px;
+}
+li ul, li ul {
+    margin-left: 24px;
+}
+p, ul, ol {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 700px;
+}
+pre {
+    padding: 0px 24px;
+    max-width: 800px;
+    white-space: pre-wrap;
+}
+code {
+    font-family: 'Meslo LG M DZ', 'Source Code Pro', Consolas, Monaco, Andale Mono, monospace;
+    line-height: 1.5;
+    font-size: 13px;
+    white-space: pre;
+}
+aside {
+    display: block;
+    float: right;
+    width: 390px;
+}
+blockquote {
+    border-left:.5em solid #eee;
+    padding: 0 2em;
+    margin-left:0;
+    max-width: 476px;
+}
+blockquote  cite {
+    font-size:14px;
+    line-height:20px;
+    color:#bfbfbf;
+}
+blockquote cite:before {
+    content: '\2014 \00A0';
+}
+
+blockquote p {  
+    color: #666;
+    max-width: 460px;
+}
+hr {
+    width: 540px;
+    text-align: left;
+    margin: 0 auto 0 0;
+    color: #999;
+}
+
+/* Code below this line is copyright Twitter Inc. */
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+button, input {
+  line-height: normal;
+  *overflow: visible;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+}
+/* override default chrome & firefox settings */
+input:not([type="image"]), textarea {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+label,
+input,
+select,
+textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: normal;
+  margin-bottom: 18px;
+}
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+  margin-bottom: 0;
+}
+input[type=text],
+input[type=password],
+textarea,
+select {
+  display: inline-block;
+  width: 210px;
+  padding: 4px;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  height: 18px;
+  color: #808080;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+select, input[type=file] {
+  height: 27px;
+  line-height: 27px;
+}
+textarea {
+  height: auto;
+}
+
+/* grey out placeholders */
+:-moz-placeholder {
+  color: #bfbfbf;
+}
+::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+input[type=text],
+input[type=password],
+select,
+textarea {
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+input[type=text]:focus, input[type=password]:focus, textarea:focus {
+  outline: none;
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+/* buttons */
+button {
+  display: inline-block;
+  padding: 4px 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  background-color: #0064cd;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));
+  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));
+  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -o-linear-gradient(top, #049cdb, #0064cd);
+  background-image: linear-gradient(top, #049cdb, #0064cd);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid #004b9a;
+  border-bottom-color: #003f81;
+  -webkit-transition: 0.1s linear all;
+  -moz-transition: 0.1s linear all;
+  transition: 0.1s linear all;
+  border-color: #0064cd #0064cd #003f81;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+button:hover {
+  color: #fff;
+  background-position: 0 -15px;
+  text-decoration: none;
+}
+button:active {
+  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+#page {
+	width: 700px;
+	margin: auto;
+	height: 100%;
+	background: white;
+}
+#page::after {
+	content: "Copyright (C) 2013 - muWiki";
+	vertical-align: bottom;
+	margin-top: 40px;
+	padding-top: 5px;
+	border-top: 1px solid #ccc;
+	color: #999;
+	text-align: right;
+	display: block;
+	height: 40px;
+}
+
+img { 
+	border: 0px solid transparent; 
+	max-width: 700px; 
+	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5); 
+}
+
+form, form .CodeMirror {
+	height: 90% ;
+}
+.CodeMirror-gutter.CodeMirror-linenumbers.loading {
+	position: absolute;
+	bottom: 0px;
+	height: 0%;
+	margin-bottom: 30px;
+	padding-bottom: 0;
+	background: #369;
+}
+
+#breadcrumbs { width: 700px; margin: auto; font-size: 10pt; }
+#breadcrumbs a { color: #999; text-decoration: none; margin-right: 5px; }
+#breadcrumbs a:hover { color: #09f; text-decoration: none; }
+#breadcrumbs a::before { content: "/"; margin-right: 5px; text-decoration: none; color: #999; border: 0 solid white; }
+
+.toolbar {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  background-color: #0064cd;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));
+  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));
+  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -o-linear-gradient(top, #049cdb, #0064cd);
+  background-image: linear-gradient(top, #049cdb, #0064cd);
+  border: 1px solid #004b9a;
+  border-bottom-color: #003f81;
+  -webkit-transition: 0.1s linear all;
+  -moz-transition: 0.1s linear all;
+  transition: 0.1s linear all;
+  border-color: #0064cd #0064cd #003f81;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+.toolbar button {
+	height: 24px;
+	width: 24px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin: 2px;
+	padding: 5px;
+}
+.toolbar .save { width: 40px; }
+button.edit { position: fixed; top: 0px; right: 10px; }
+.toolbar .addImg { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAApElEQVQ4jd3RO4oCQRQF0KOomUswMx531TvxAybuYDCYgUFwPZoZqOAHMXJAECeYaiiKbmkw0gs3efdDvVe8Nbr4wRYHzMOscviIe8ITOmWhBkbYRIEvfCcls7KCcWJcoB24jObnNNgM4WtkuuAj8vTwG+krDEPWpGDXrOCFWYFvAPsCIWeOMn1dx63sKBVQq2P6RMEntPx/36NVUu7QF4744vgDQ/pKJnCgAhYAAAAASUVORK5CYII=); }
+.toolbar .addLink { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAABAUlEQVQ4jY3SwStEYRQF8J+YRhYsZkNRNrY2Q/mH7J4tKyzMH6EowxQLVpIVK5SiWE02spilUv4BYzGXXl/j+W69evec79xz7vceeVVDBz00MzW/NY5L9OP5xEquuIazED5hO94/cpKUne8xFfgqvnKSrJWcGwnXCu61asASbjCLNjYCn0Y3BuylojEUWI5+AtdxuI15vEW/i5FUfBLkAyZxF/05FqrEdVwE+Yi5RFwPvI9jjP7l3I0dO9FfxRpirSIVw34ihnUcGFzgrX+++c9eOwnewHNwRdWARbzHwc3AZvAS2OGw2Gk1DX7PPrZKzqcGd5RV5STZzsOS9HCU6/wN2/5MzTL2/gcAAAAASUVORK5CYII=);}
+.toolbar .save { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACKElEQVQ4jX2Sv2tUQRDHP7v78t5dDgVR0PizsY6IjaCdiGW6gFhYCRYpxRQqon+KnYU2dlYhlVqopBBRY+vPXPCSu3dvZ3fG4t4ZBZOBZYdl5vud73fWdbuzjy9dWbh88cL5cOrEXEgpsVs4HI1EXrxa09WV54/ev1tbKrLqTIxy4NrVRY4fO7Jr8zRGdcPK6iuOnzy9ACwVADFGVBXJynjc7NrsnQPnyDljpgAUmJFSQk0Z1pFmHHeX4BxVWSCSSCItAJBEyNmox5Gm2RsgBIdIRFqvCmsBTJVxIzSN7AnQKQtEhCxpR0IUQQ28CygezP7TDR6P4RARJMnOBGbKh48fOXf2DJ2un9Lh3CQ14w/o5/V1tgYDpusupgTLy3dQNYL3zPZmKYoZYpz4oarknCdma6asKnL+S4LIpHC21+PmjeucmZ8n5YzDCGHC8Wn9E0+ePuPN2zUkRYL3OxJEIoajq5mjc4e5tXyXL1+/8eDebfbv34eqcujgAcqqxAxySmirb2JiO2rTlPT7fSRGNGcGWwPMJuN3OhX1aESMDUUIOO92PEgiqBkSI3VdMxwNGQ4nJzhHVmVKFJsG16nw1kpQzb82Nzc2UsoHx/VQe72ee3j/jkspMW5qgveYGWVZ8vPHd/r9DcqZGQydbpeqKIqX3W63A1BVVQghBO+9d875tsbMzFJKllJWM1UReb29vb3o7N9PE4Au0Gvvqn0zQIAaGAIjIAL8BkqNUO2+J2pxAAAAAElFTkSuQmCC); }
+.toolbar .history { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAC8klEQVR4Xm2Te0jUWRTHv/Noxl3xgctWGpXPmtxSx3HyMWom7tigqVnrq9HMZU1IKS2zLKJibSGIgpgsWrQHRa1KWpGaoX/0bxQYObFoS1EEWoMzOpE1M9/uiC2/xA98OJdz7zmXc+HKSGIeQUKz2+3OsU/a4wDI/AP8h5VKZS+Aa8JxSCEpNd/pdNovWM6zuHAbC3Pymbcph8Vbt/HcmbOcckw5SJZJa6TFFWNjo0zS6vhHeTnNv5WwYXct66p3sWRLIat3VDJVn8Bnw8MU1MxvsNphd7iCg35iVUkZHw0OMSFay+L8AnpJXKebzVVvL+figACOT0x4SOq+NQgUXq8oLWXT3nomxsbQkJxMQ1w8m+v30EtKvI7pKQbqo2N5vOkwC3PzKegVhsgJ/Gp3fizqv9uP3Lw8AAoo5ApMk3hrs8PLxxkXPABcixTIzM7C4MN+vH03bgRgwnub/UxnZzcjQlYwTbeeqYnJ1K9PYsrylawU43jRRESJ+RNp0CcxXpwJ+3kp265c5cSHyXMYeTHabrFc4JrwMEYGL+PayFXU6PS8BNCL9cEADytVPBsWwRNiPyw0kmvXaNjy50mOWP9tV9o+vH/to1bD+vI/SNEMDmFzaRn6unvgguDNG+DLDL7xg68vbDbbODo7b2f2Dwy6QgKDZl8awGzUxWkJQOr/e0E+P/LOvT5PV1d3AVpbL8pu3Pjn6KmWv5iblSUtoFyoFMokuQJjNluOneCtmx0WUasGSRxobPLp6OhyW06fpk4T7b1lwZs3paXzyP5Gtrdd9hw62OxHEnIIZDLZp4oKc7gh04jH1ud4+uQJTOkZqCwqRlWZGTuLSjA6YkXt3gYsXh6K2rrdvwCYEkKOOVQq1asEvba0rf2yu25fAzru9OD3mhoYTSZszM7G9Gc3/r56xdOwb0+VWq22Sj8TJPgKY0SzWkNyyt0NaRljq6NWjQUvWXZfoVDUA9AK/aS1C31n70gKACrhormUSzhD0o15fAXBJbni74ajYwAAAABJRU5ErkJggg==);}
