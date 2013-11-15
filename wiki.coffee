@@ -8,15 +8,15 @@ window.save = (editor) ->
 	$("#page").html showdown.makeHtml data
 	document.title = data.substr 0, data.indexOf("\n")
 	$("#page a").click ->
-		event.preventDefault()
-		if this.href
+		if this.href and this.href.indexOf("static/") < 0
+			event.preventDefault()
 			location.hash = "##{this.href.replace(location.href.replace(/#.*$/g, ''), '')}"
 
 	$.post "savePage.do?" + location.hash.replace(/^#/, ''), data
 
-window.addImg = (editor, cm) ->
+window.addImg = (editor) ->
 	$("#fileEl").change (e) ->
-		uploadFiles this.files, cm
+		uploadFiles this.files, editor
 
 	$("#fileEl").click()
 
@@ -24,6 +24,13 @@ window.addLink = (editor) ->
 	url = prompt("Please enter the Link's URL:")
 	editor.getDoc().replaceSelection "[#{editor.getDoc().getSelection() or "Link name"}](#{url})", true
 	editor.focus()
+
+window.duplicate = (from) ->
+	name = prompt "Please enter the duplicate's name:"
+	$.get "duplicate.do?from=#{from}&to=#{name}", ->
+		location.hash = "##{name}"
+
+window.viewHistory = (editor) ->
 
 uploadFiles = (files, cm) ->
 	for file in files
@@ -53,7 +60,7 @@ window.editPage = ->
 	form = document.createElement("form")
 	ta = document.createElement("textarea")
 	ta.id = "code"
-	$(form).append "<div class='toolbar'><button class='save'></button><button class='addImg'></button><button class='addLink'></button><button class='history'></button></div>"
+	$(form).append "<div class='toolbar'><button class='save'></button><button class='addImg'></button><button class='addLink'></button><button class='viewHistory'></button></div>"
 	form.appendChild ta
 	$("#page").html form.outerHTML
 	$("#code").val currentPage
@@ -103,7 +110,8 @@ hashChange = ->
 		if not pageHistory
 			pageHistory = []
 		else if not pageHistoryModified
-			pageHistory.push [""+currentHash, ""+document.title]
+			if not pageHistory.some((el) -> el[0] is currentHash)
+				pageHistory.push [""+currentHash, ""+document.title]
 		pageHistoryModified = false
 		currentPage = data
 		$("#page").html showdown.makeHtml data
@@ -111,8 +119,8 @@ hashChange = ->
 		document.title = title
 		window.currentHash = location.hash
 		$("#page a").click (event) ->
-			event.preventDefault()
-			if this.href
+			if this.href and this.href.indexOf("static/") < 0
+				event.preventDefault()
 				location.hash = "##{this.href.replace(location.href.replace(/#.*$/g, ''), '')}"
 
 input = document.createElement("input")

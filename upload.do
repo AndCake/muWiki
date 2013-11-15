@@ -15,8 +15,13 @@ if [ ! -f "$FILE" ]; then
 	NEW=1
 fi
 
-cat /dev/stdin > $FILE
-base64 -D < $FILE > $FILE.bak
+if [ $CONTENT_LENGTH -gt 0 ]; then
+        read -n $CONTENT_LENGTH line
+        echo "$line" > $FILE
+else
+        cat /dev/stdin > $FILE
+fi
+base64 -d < $FILE > $FILE.bak
 mv $FILE.bak $FILE
 
 if [ "$NEW" == "1" ]; then

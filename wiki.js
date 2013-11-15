@@ -16,17 +16,17 @@
     $("#page").html(showdown.makeHtml(data));
     document.title = data.substr(0, data.indexOf("\n"));
     $("#page a").click(function() {
-      event.preventDefault();
-      if (this.href) {
+      if (this.href && this.href.indexOf("static/") < 0) {
+        event.preventDefault();
         return location.hash = "#" + (this.href.replace(location.href.replace(/#.*$/g, ''), ''));
       }
     });
     return $.post("savePage.do?" + location.hash.replace(/^#/, ''), data);
   };
 
-  window.addImg = function(editor, cm) {
+  window.addImg = function(editor) {
     $("#fileEl").change(function(e) {
-      return uploadFiles(this.files, cm);
+      return uploadFiles(this.files, editor);
     });
     return $("#fileEl").click();
   };
@@ -37,6 +37,16 @@
     editor.getDoc().replaceSelection("[" + (editor.getDoc().getSelection() || "Link name") + "](" + url + ")", true);
     return editor.focus();
   };
+
+  window.duplicate = function(from) {
+    var name;
+    name = prompt("Please enter the duplicate's name:");
+    return $.get("duplicate.do?from=" + from + "&to=" + name, function() {
+      return location.hash = "#" + name;
+    });
+  };
+
+  window.viewHistory = function(editor) {};
 
   uploadFiles = function(files, cm) {
     var file, fr, _i, _len, _results;
@@ -77,7 +87,7 @@
     form = document.createElement("form");
     ta = document.createElement("textarea");
     ta.id = "code";
-    $(form).append("<div class='toolbar'><button class='save'></button><button class='addImg'></button><button class='addLink'></button><button class='history'></button></div>");
+    $(form).append("<div class='toolbar'><button class='save'></button><button class='addImg'></button><button class='addLink'></button><button class='viewHistory'></button></div>");
     form.appendChild(ta);
     $("#page").html(form.outerHTML);
     $("#code").val(currentPage);
@@ -138,7 +148,11 @@
       if (!pageHistory) {
         pageHistory = [];
       } else if (!pageHistoryModified) {
-        pageHistory.push(["" + currentHash, "" + document.title]);
+        if (!pageHistory.some(function(el) {
+          return el[0] === currentHash;
+        })) {
+          pageHistory.push(["" + currentHash, "" + document.title]);
+        }
       }
       pageHistoryModified = false;
       currentPage = data;
@@ -147,8 +161,8 @@
       document.title = title;
       window.currentHash = location.hash;
       return $("#page a").click(function(event) {
-        event.preventDefault();
-        if (this.href) {
+        if (this.href && this.href.indexOf("static/") < 0) {
+          event.preventDefault();
           return location.hash = "#" + (this.href.replace(location.href.replace(/#.*$/g, ''), ''));
         }
       });
